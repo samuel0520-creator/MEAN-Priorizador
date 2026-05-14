@@ -12,11 +12,23 @@ export interface AppUser {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:4000/api/users';
+
+  private apiUrl =
+    'https://mean-priorizador.onrender.com/api/users';
 
   constructor(private http: HttpClient) {}
 
-  simpleLogin(data: { name: string; email: string }): Observable<AppUser> {
-    return this.http.post<AppUser>(`${this.apiUrl}/simple-login`, data);
+  simpleLogin(
+    data: {
+      name: string;
+      email: string;
+    }
+  ): Observable<AppUser> {
+
+    return this.http.post<AppUser>(
+      `${this.apiUrl}/simple-login`,
+      data
+    );
+
   }
 }

@@ -1,0 +1,102 @@
+<div class="login-container">
+
+    <div class="background-glow glow1"></div>
+    <div class="background-glow glow2"></div>
+
+    <div class="login-card">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                TP
+            </div>
+
+            <h1>TaskPriority</h1>
+
+            <p>
+                Plataforma Inteligente de Gestión de Tareas
+            </p>
+
+        </div>
+
+        <!-- INFO -->
+
+        <div class="info-box">
+
+            <h3>
+                Registro rápido
+            </h3>
+
+            <p>
+                Ingresa tu nombre y correo para comenzar.
+                Tus tareas quedarán guardadas automáticamente.
+            </p>
+
+        </div>
+
+        <!-- NOMBRE -->
+
+        <div class="input-group">
+
+            <label>Nombre completo</label>
+
+            <input
+                type="text"
+                placeholder="Samuel Navarro"
+                [(ngModel)]="name"
+            >
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+            <label>Correo electrónico</label>
+
+            <input
+                type="email"
+                placeholder="example@email.com"
+                [(ngModel)]="email"
+            >
+
+        </div>
+
+        <!-- ERROR -->
+
+        <div
+            *ngIf="errorMessage"
+            class="error-message"
+        >
+            {{ errorMessage }}
+        </div>
+
+        <!-- BOTÓN -->
+
+        <button
+            (click)="login()"
+            [disabled]="loading"
+        >
+
+            {{ loading
+                ? 'Ingresando...'
+                : 'Continuar'
+            }}
+
+        </button>
+
+        <!-- EXTRA -->
+
+        <div class="extra-options">
+
+            <p>
+                Tus datos se almacenan en MongoDB Atlas
+                y cada usuario administra únicamente
+                sus propias tareas.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
